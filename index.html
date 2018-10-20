@@ -8,15 +8,13 @@
 </head>
 <body>
 <script>
+    let days = [
+        'Понедельник', 'Вторник', 'Среда', 'Четверг',
+        'Пятница', 'Суббота', 'Воскресенье'
+    ]
     let date = new Date();
-    alert(
-        addNull(date.getHours()) + ':' +
-        addNull(date.getMinutes()) + ':' +
-        addNull(date.getSeconds()) + ' ' +
-        addNull(date.getDate()) + '.' +
-        addNull(date.getMonth()) + '.' +
-        date.getFullYear()
-    )
+    let DayNumber = date.getDay();
+    alert(days[DayNumber-1]);
 </script>
 </body>
 </html>
