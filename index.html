@@ -8,8 +8,15 @@
 </head>
 <body>
 <script>
-let day = new Date();
-alert(day.getDate())
+    let date = new Date();
+    alert(
+        addNull(date.getHours()) + ':' +
+        addNull(date.getMinutes()) + ':' +
+        addNull(date.getSeconds()) + ' ' +
+        addNull(date.getDate()) + '.' +
+        addNull(date.getMonth()) + '.' +
+        date.getFullYear()
+    )
 </script>
 </body>
 </html>
