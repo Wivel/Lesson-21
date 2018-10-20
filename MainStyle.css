@@ -1,0 +1,11 @@
+input{
+    text-align: center;
+
+}
+div{
+    align-self: center;
+    align-items: center;
+    alignment: center;
+    align-content: center;
+    child-align: top;
+}
