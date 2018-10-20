@@ -8,13 +8,9 @@
 </head>
 <body>
 <script>
-    let days = [
-        'Понедельник', 'Вторник', 'Среда', 'Четверг',
-        'Пятница', 'Суббота', 'Воскресенье'
-    ]
-    let date = new Date();
-    let DayNumber = date.getDay();
-    alert(days[DayNumber-1]);
+let now = new Date();
+let min = now.getTime()/(1000*60)
+alert(min.toFixed());
 </script>
 </body>
 </html>
