@@ -48,14 +48,13 @@ function getBirthday(elem) {
     let Day, Mouth, Year,
         arr   = [];
         arr   = elem.value.split('-');
-    if (arr[0].length == 4 && arr[1].length == 2 && arr[2].length == 2) {
-        alert('right');
-        Day     = delNull(arr[2]);
-        Mouth   = delNull(arr[1]);
-        Year    = delNull(arr[0]);
+    if (arr[0].length === 4 && arr[1].length === 2 && arr[2].length === 2) {
+        Day     = (+delNull(arr[2]));
+        Mouth   = (+delNull(arr[1]))-1;
+        Year    = +delNull(arr[0]);
     } else {
         alert('Неправильно введены данные');
         return 0;
     }
-
+    let now = new Date();
 }
