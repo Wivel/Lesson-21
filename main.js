@@ -46,7 +46,6 @@ function getBirthday_old(elem) {
 
 function getBirthday(elem) {
     let Day, Mouth, Year,
-        arr   = [];
         arr   = elem.value.split('-');
     if (arr[0].length === 4 && arr[1].length === 2 && arr[2].length === 2) {
         Day     = (+delNull(arr[2]));
@@ -56,5 +55,21 @@ function getBirthday(elem) {
         alert('Неправильно введены данные');
         return 0;
     }
-    let now = new Date();
+    let now = new Date(),
+        selected_Year = now.getFullYear();
+    if (now.getMonth()>= Mouth){
+        if ( now.getMonth()> Mouth){
+        selected_Year++;
+        }
+        else {
+            if (Day === now.getDate()){
+                alert('С днём рождения!');
+                return 0;
+            }
+            if (now.getDate()>Day){
+                selected_Year++;
+            }
+        }
+    }
+    alert(selected_Year);
 }
