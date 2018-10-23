@@ -46,7 +46,8 @@ function getBirthday_old(elem) {
 
 function getBirthday(elem) {
     let Day, Mouth, Year,
-        arr   = elem.value.split('-');
+        arr   = elem.value.split('-'),
+        Span = document.getElementById('Birthday');
     if (arr[0].length === 4 && arr[1].length === 2 && arr[2].length === 2) {
         Day     = (+delNull(arr[2]));
         Mouth   = (+delNull(arr[1]))-1;
@@ -71,5 +72,8 @@ function getBirthday(elem) {
             }
         }
     }
-    alert(selected_Year);
+    let BirthdayDate = new Date(selected_Year,Mouth,Day),
+        result       = BirthdayDate.getTime() - now.getTime();
+    result = Math.ceil(result / (1000 * 60 * 60 * 24));
+    Span.innerHTML = 'До вашего дня рождения осталось - '+'<b>'+result+'</b>'+' дней';
 }
